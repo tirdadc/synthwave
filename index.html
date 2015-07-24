@@ -1,12 +1,14 @@
 <html>
   <head>
-    <title>Synthwave band name generator</title>
+    <title>SYNTHGEN 2000</title>
     <script src='synthwave.js' type='text/javascript'></script>
     <link rel='stylesheet' type='text/css' href='synthwave.css'>
   </head>
   <body>
+    <div class='name-container'>
+      <div class='name' id="demo"></div>
+    </div>
     <a href='#' class='button' onclick="event.preventDefault(); generate();">Generate</a>
-    <h1 id="demo"></h1>
     <script>
       function generate() {
         var x = document.getElementById("demo");

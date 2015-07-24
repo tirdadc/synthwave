@@ -1,0 +1,16 @@
+body {
+  text-align: center;
+}
+
+a.button {
+  text-decoration: none;
+  font-size: 2em;
+}
+
+a.button:hover {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 6em;
+}

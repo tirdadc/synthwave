@@ -14,6 +14,7 @@ var words = [
   'Vindicator',
   'Protector',
   'Vice',
+  'Video',
   'Hotline',
   'Skyline',
   'Streets',
@@ -78,6 +79,9 @@ var suffixes = [
   'drive',
   'rider',
   'slasher',
+  'driver',
+  'crawler',
+  'hunter',
   'net'
 ];
 

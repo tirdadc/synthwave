@@ -48,6 +48,7 @@ a:hover {
 
 .name-container {
   font-size: 2.3em;
+  letter-spacing: 0.1em;
   font-family: Technomite;
   width: 100%;
   position: relative;

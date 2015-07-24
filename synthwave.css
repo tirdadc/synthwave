@@ -16,22 +16,34 @@ body {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   height: 100%;
+  font-family: Edit Undo BRK;
+  color: #ec3eb9;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
-a.button {
-  font-family: Edit Undo BRK;
+a {
+  color: #ec3eb9;
   text-decoration: none;
+  font-weight: normal;
+}
+
+a.button,
+p.credits {
   font-size: 2em;
-  color: white;
   position: fixed;
-  top: 80%;
+  top: 78%;
   margin: 5% auto;
   left: 0;
   right: 0;
 }
 
-a.button:hover {
-  color: blue;
+p.credits {
+  font-size: 1em;
+  top: 85%;
+}
+
+a:hover {
+  color: #5dd4ec;
 }
 
 .name-container {

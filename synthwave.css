@@ -63,7 +63,7 @@ a:hover {
 
 .name {
   margin: 0 auto;
-  max-width: 30%;
+  max-width: 26%;
 }
 
 @media screen and (max-width: 500px) {

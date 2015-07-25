@@ -47,7 +47,9 @@ var words = [
   'Fist',
   'Cruise',
   'Elite',
-  'Vector'
+  'Vector',
+  'Showdown',
+  'Electric'
 ];
 
 var numbers = [
@@ -126,15 +128,11 @@ function generate_name() {
   var add_location = random_boolean(0.8);
   var add_number = random_boolean(0.9);
 
-  //var number_of_words = Math.floor((Math.random() * 3) + 1);
-  //number_of_words = number_of_words === 1 ? number_of_words + 1 : number_of_words;
-
   if (random_boolean(0.8)) {
     name.push(generate_composed_word(prefixes, suffixes));
     return name.join('');
   }
 
-  //console.info('number_of_words: ' + number_of_words)
   for (i = 0; i < number_of_words; i++) {
     name.push(get_random_item(words, name));
   }

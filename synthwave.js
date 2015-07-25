@@ -19,6 +19,8 @@ var words = [
   'Hotline',
   'Skyline',
   'Street',
+  'Futur',
+  'Blast',
   'Midnight',
   'Sunset',
   'Stallone',
@@ -144,6 +146,11 @@ function random_boolean(probability) {
 }
 
 function add_if_not_present(list, word) {
+  for (i = 0; i < list.length; i++) {
+    if (list[i].indexOf(word) > -1 && word.indexOf(list[i]) > -1) {
+      return;
+    }
+  }
   list.push(word);
 }
 

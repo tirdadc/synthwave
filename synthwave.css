@@ -68,7 +68,7 @@ a:hover {
 
 @media screen and (max-width: 500px) {
   .name {
-    max-width: 75%;
+    max-width: 70%;
     font-size: 60%;
   }
 }

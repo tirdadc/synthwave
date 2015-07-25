@@ -7,6 +7,7 @@ var words = [
   'Force',
   'Glove',
   'Power',
+  'Cyborg',
   'VHS',
   'Laser',
   'Drive',
@@ -17,11 +18,13 @@ var words = [
   'Video',
   'Hotline',
   'Skyline',
-  'Streets',
+  'Street',
   'Midnight',
   'Sunset',
   'Stallone',
   'Jackson',
+  'Samantha',
+  'Jennifer',
   'Danger',
   'Flash',
   'Bronson',
@@ -42,6 +45,7 @@ var words = [
   'Noir',
   'Mega',
   'Youth',
+  'Club',
   'Turbo',
   'Cassette',
   'Fist',
@@ -49,7 +53,13 @@ var words = [
   'Elite',
   'Vector',
   'Showdown',
-  'Electric'
+  'Electric',
+  'Foxx',
+  'Radar',
+  'Hi-Fi',
+  'Rage',
+  'Lights',
+  'Stereo'
 ];
 
 var numbers = [
@@ -59,12 +69,18 @@ var numbers = [
   '2000'
 ];
 
-var locations = [
+var prefix_locations = [
   'Tokyo',
   'LA',
   'Miami',
   'California',
-  'Malibu'
+  'Malibu',
+  'Beverly Hills',
+  'Interstate'
+];
+
+var suffix_locations = [
+  'Streets'
 ];
 
 var suffixes = [
@@ -84,7 +100,10 @@ var suffixes = [
   'driver',
   'crawler',
   'hunter',
-  'net'
+  'fighter',
+  'starr',
+  'net',
+  'mancer'
 ];
 
 var prefixes = [
@@ -103,7 +122,9 @@ var prefixes = [
   'Synth',
   'Futur',
   'Poly',
-  'Neuro'
+  'Neuro',
+  'Thunder',
+  'Stereo'
 ];
 
 function generate_composed_word(prefixes, suffixes) {
@@ -118,29 +139,38 @@ function get_random_item(list, exclude_items) {
   return new_item;
 }
 
-function random_boolean(threshold) {
-  return Math.random() > threshold;
+function random_boolean(probability) {
+  return Math.random() > (1 - probability);
+}
+
+function add_if_not_present(list, word) {
+  list.push(word);
 }
 
 function generate_name() {
   var name = [];
   var number_of_words = 2;
-  var add_location = random_boolean(0.8);
-  var add_number = random_boolean(0.9);
+  var add_prefix_location = random_boolean(0.2);
+  var add_number = random_boolean(0.1);
+  var add_suffix_location = random_boolean(0.05);
 
-  if (random_boolean(0.8)) {
-    name.push(generate_composed_word(prefixes, suffixes));
+  if (random_boolean(0.2)) {
+    add_if_not_present(name, generate_composed_word(prefixes, suffixes));
     return name.join('');
   }
 
   for (i = 0; i < number_of_words; i++) {
-    name.push(get_random_item(words, name));
+    add_if_not_present(name, get_random_item(words, name));
   }
-  if (add_location) {
-    name.unshift(get_random_item(locations, name));
+  if (add_prefix_location) {
+    name.unshift(get_random_item(prefix_locations, name));
+  }
+  if (!add_prefix_location && add_suffix_location) {
+    add_if_not_present(name, get_random_item(suffix_locations, name));
   }
   if (add_number) {
-    name.push(get_random_item(numbers, name));
+    add_if_not_present(name, get_random_item(numbers, name));
   }
+
   return name.join(' ');
 }

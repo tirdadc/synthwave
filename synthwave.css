@@ -63,3 +63,7 @@ a:hover {
   margin: 0 auto;
   max-width: 26%;
 }
+
+@media screen and (max-width: 500px) {
+    body{font-size: 120%;}
+}

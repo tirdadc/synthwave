@@ -19,7 +19,6 @@ body {
   height: 100%;
   font-family: Edit Undo BRK;
   color: #ec3eb9;
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 a {
@@ -31,6 +30,7 @@ a {
 
 a.button,
 p.credits {
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   font-size: 2em;
   position: fixed;
   top: 78%;
@@ -49,9 +49,10 @@ a:hover {
 }
 
 .name-container {
-  font-size: 2.3em;
+  font-size: 2em;
   letter-spacing: 0.1em;
   font-family: Technomite;
+  text-transform: uppercase;
   width: 100%;
   position: relative;
   top: 50%;

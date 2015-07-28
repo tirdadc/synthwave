@@ -57,10 +57,13 @@ a:hover {
 }
 
 .name-container {
-  font-size: 2em;
-  letter-spacing: 0.1em;
+  color: #ED2121;
+  font-size: 1.5em;
   font-family: Technomite;
   text-transform: uppercase;
+  text-shadow: -2px 2px 0px #000;
+  letter-spacing: 0.15em;
+  line-height: 1.5;
   width: 100%;
   position: relative;
   top: 50%;
@@ -77,7 +80,7 @@ a:hover {
 @media screen and (max-width: 500px) {
   .name {
     max-width: 70%;
-    font-size: 60%;
+    font-size: 85%;
   }
   .logo {
     max-width: 90%;

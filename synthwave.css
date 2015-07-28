@@ -48,7 +48,7 @@ p.credits {
 }
 
 p.credits {
-  font-size: 1em;
+  font-size: 1.2em;
   top: 85%;
 }
 
@@ -84,5 +84,15 @@ a:hover {
   }
   .logo {
     max-width: 90%;
+  }
+  p.credits {
+    top: 87%;
+  }
+  p.credits > .code, .design {
+    width: 100%;
+    display: block;
+  }
+  p.credits > .separator {
+    display: none;
   }
 }

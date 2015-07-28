@@ -21,9 +21,17 @@ body {
   color: #ec3eb9;
 }
 
+.logo {
+  max-width: 500px;
+  position: fixed;
+  margin: 5% auto;
+  left: 0;
+  right: 0;
+}
+
 a {
   outline: 0;
-  color: #ec3eb9;
+  color: #5dd4ec;
   text-decoration: none;
   font-weight: normal;
 }
@@ -45,7 +53,7 @@ p.credits {
 }
 
 a:hover {
-  color: #5dd4ec;
+  color: #ec3eb9;
 }
 
 .name-container {
@@ -70,5 +78,8 @@ a:hover {
   .name {
     max-width: 70%;
     font-size: 60%;
+  }
+  .logo {
+    max-width: 90%;
   }
 }

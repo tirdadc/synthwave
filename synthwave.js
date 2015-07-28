@@ -43,6 +43,7 @@ var words = [
   'Ferrari',
   'Attack',
   'Strike',
+  'Squad',
   'Maximum',
   'Noir',
   'Mega',

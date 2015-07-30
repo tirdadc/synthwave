@@ -36,15 +36,21 @@ a {
   font-weight: normal;
 }
 
-a.button,
+a#generate,
+a#toggle_music,
 p.credits {
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   font-size: 2em;
   position: fixed;
-  top: 78%;
+  top: 70%;
   margin: 5% auto;
   left: 0;
   right: 0;
+}
+
+a#toggle_music {
+  top: 77%;
+  font-size: 1.2em;
 }
 
 p.credits {
@@ -53,7 +59,7 @@ p.credits {
 }
 
 a:hover {
-  color: #ec3eb9;
+  color: aquamarine;
 }
 
 .name-container {
@@ -77,10 +83,17 @@ a:hover {
   max-width: 26%;
 }
 
+audio {
+  display: none;
+}
+
 @media screen and (max-width: 500px) {
   .name {
     max-width: 70%;
     font-size: 85%;
+  }
+  span.init {
+    font-size: 70%;
   }
   .logo {
     max-width: 90%;

@@ -8,12 +8,21 @@
   <body>
     <img src='assets/logo.png' class='logo' />
     <div class='name-container'>
-      <div class='name' id="demo"></div>
+      <div class='name' id="demo">
+        <span class='init'>Find a name for your synthwave project with a single click</span>
+      </div>
     </div>
-    <a href='#' class='button' onclick="event.preventDefault(); generate();">Generate</a>
+    <a href='#' id='generate' class='button' onclick="event.preventDefault(); generate();">Generate</a>
+    <a href='#' id='toggle_music' class='button' onclick="event.preventDefault(); toggleMusic();">Stop Music</a>
+    <p>
+      <audio id='audioloop' autoplay="autoplay" loop="loop" controls="controls">
+        <source src="assets/synthwave.ogg" type="audio/ogg">
+        <source src="assets/synthwave.mp3" type="audio/mpeg">
+      </audio>
+    </p>
     <p class='credits'>
       <span class='code'>
-        Code by <a href='https://stelladrine.bandcamp.com/'>tirdadc</a>
+        Code + audio by <a href='https://stelladrine.bandcamp.com/'>tirdadc</a>
       </span>
       <span class='separator'>
         |
@@ -27,7 +36,17 @@
         var x = document.getElementById("demo");
         x.innerHTML = generate_name();
       }
-      generate();
+      function toggleMusic() {
+        var button = document.getElementById('toggle_music');
+        var audio = document.getElementById('audioloop');
+        if (audio.paused) {
+          button.innerHTML = 'Stop Music';
+          audio.play();
+        } else {
+          button.innerHTML = 'Start Music';
+          audio.pause();
+        }
+      }
     </script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

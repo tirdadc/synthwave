@@ -3,6 +3,7 @@
     <title>SYNTHGEN 2000</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <script src='synthwave.js' type='text/javascript'></script>
+    <script src='howler.min.js' type='text/javascript'></script>
     <link rel='stylesheet' type='text/css' href='synthwave.css'>
   </head>
   <body>
@@ -14,11 +15,6 @@
     </div>
     <a href='#' id='generate' class='button' onclick="event.preventDefault(); generate();">Generate</a>
     <a href='#' id='toggle_music' class='button' onclick="event.preventDefault(); toggleMusic();">Stop Music</a>
-    <p>
-      <audio id='audioloop' autoplay="autoplay" loop="loop" controls="controls">
-        <source src="assets/synthwave.ogg" type="audio/ogg">
-      </audio>
-    </p>
     <p class='credits'>
       <span class='code'>
         Code + audio by <a href='https://stelladrine.bandcamp.com/'>tirdadc</a>
@@ -31,19 +27,24 @@
       </span>
     </p>
     <script>
+      var sound = new Howl({
+        urls: ['assets/synthwave.ogg'],
+        loop: true,
+        autoplay: true
+      });
       function generate() {
         var x = document.getElementById("demo");
         x.innerHTML = generate_name();
       }
       function toggleMusic() {
         var button = document.getElementById('toggle_music');
-        var audio = document.getElementById('audioloop');
-        if (audio.paused) {
-          button.innerHTML = 'Stop Music';
-          audio.play();
-        } else {
+        if (sound.pos() !== 0) {
           button.innerHTML = 'Start Music';
-          audio.pause();
+          sound.stop();
+        }
+        else {
+          button.innerHTML = 'Stop Music';
+          sound.play();
         }
       }
     </script>

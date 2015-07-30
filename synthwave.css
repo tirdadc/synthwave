@@ -83,10 +83,6 @@ a:hover {
   max-width: 26%;
 }
 
-audio {
-  display: none;
-}
-
 @media screen and (max-width: 500px) {
   .name {
     max-width: 70%;

@@ -34,7 +34,14 @@
       });
       function generate() {
         var x = document.getElementById("demo");
-        x.innerHTML = generate_name();
+        var name = generate_name();
+        if (name.split(" ").length == 1 && name.length > 10) {
+          x.className = 'name single';
+        }
+        else {
+          x.className = 'name';
+        }
+        x.innerHTML = name;
       }
       function toggleMusic() {
         var button = document.getElementById('toggle_music');

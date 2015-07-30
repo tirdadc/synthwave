@@ -64,7 +64,7 @@ a:hover {
 
 .name-container {
   color: #ED2121;
-  font-size: 1.5em;
+  font-size: 2em;
   font-family: Technomite;
   text-transform: uppercase;
   text-shadow: -2px 2px 0px #000;
@@ -83,10 +83,21 @@ a:hover {
   max-width: 26%;
 }
 
+.name.single {
+  font-size: 0.77em;
+}
+
+span.init {
+  font-size: 60%;
+}
+
 @media screen and (max-width: 500px) {
   .name {
     max-width: 70%;
-    font-size: 85%;
+    font-size: 70%;
+  }
+  .name.single {
+    font-size: 40%;
   }
   span.init {
     font-size: 70%;
